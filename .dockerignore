@@ -1,0 +1,9 @@
+node_modules
+.vscode
+.env
+nodemon.json
+questionExcelFormat.xlsx
+README.md
+logs/
+.git
+.gitignore
