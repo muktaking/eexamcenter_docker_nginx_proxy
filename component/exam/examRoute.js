@@ -12,7 +12,7 @@ const demoController = require('../exam/demoExamController');
 const breadcrumbs = require('../utils/breadcrumbs').breadcrumbs;
 //global variable Global list
 //exam
-router.get('/', breadcrumbs('CExam', '/exam'),examController.examGet);
+router.get('/',examController.examGet);
 router.get('/category', breadcrumbs('Category', '/exam/category'),  examController.categoryGet);
 router.get('/category/:categoryName',[
    check('categoryName', "Category is not well format").whitelist(['[a-zA-Z0-9]','%20','-'])
