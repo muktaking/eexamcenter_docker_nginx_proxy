@@ -63,6 +63,7 @@ app.use((req, res, next) => {// local values of app are set
     app.locals.isAuthenticated = req.session.isLoggedIn;
     app.locals.role = req.session.user ? req.session.user.role : null;
     app.locals.csrfToken = req.csrfToken();
+    app.locals.gai= process.env.GAI;
     next();
 })
 
