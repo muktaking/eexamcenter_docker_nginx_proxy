@@ -109,7 +109,7 @@ module.exports.questionValidation = checkSchema({
         escape: true,
         isLength: {
             errorMessage: 'Stems should not be too long',
-            options: {max:200}
+            options: {max:300}
         }
     },
     answers: {
@@ -121,7 +121,7 @@ module.exports.questionValidation = checkSchema({
         escape: true,
         isLength: {
             errorMessage: 'Stems should not be too long',
-            options: {max:200}
+            options: {max:100}
         }
     }, 
     feedbacks: {
@@ -133,7 +133,7 @@ module.exports.questionValidation = checkSchema({
         escape: true,
         isLength: {
             errorMessage: 'Stems should not be too long',
-            options: {max:200}
+            options: {max:400}
         }
     },   
     generalFeedbacks: {
@@ -145,7 +145,7 @@ module.exports.questionValidation = checkSchema({
         escape: true,
         isLength: {
             errorMessage: 'GeneralFeedback is too long',
-            options: {max:300}
+            options: {max:500}
         }
     },
     tags: {

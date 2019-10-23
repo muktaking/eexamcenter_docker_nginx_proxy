@@ -25,15 +25,15 @@ const QuestionSchema = new Schema({
     stemBody: {
        stems: [{
            type: String, 
-           maxlength: 200
+           maxlength: 300
         }],
         answers: [{
             type: String, 
-            maxlength: 200
+            maxlength: 100
          }],
          feedbacks: [{
             type: String, 
-            maxlength: 200
+            maxlength: 400
          }]
     },
     generalFeedbacks: String,
