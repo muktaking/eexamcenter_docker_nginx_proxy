@@ -221,7 +221,7 @@ module.exports.editQuestionGet = async(req, res, next)=>{
     const categoryList = await Category.find({}).sort({
         'slug': 1
     });
-    res.status(200).render('editQuestion', {path: '/question/editQuestion', category:categoryList});
+    res.status(200).render('question/editQuestion', {path: '/question/editQuestion', category:categoryList});
 }
 
 //editQuestionPost 
