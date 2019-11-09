@@ -5,6 +5,13 @@
 body{
     overflow: visible;
 }
+
+/* .bg .bg-overlay nav.navbar{
+    background-color: rgba(86,61,124, 0.5) !important;
+} */
+/* #container-nav nav.navbar{
+    background-color: black;
+} */
 nav.navbar{
     background-color: rgb(255, 255, 255) !important;
 }
