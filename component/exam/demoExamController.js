@@ -42,6 +42,7 @@ module.exports.examGet = async(req,res,next)=>{
 
         let totalQuestionList = await Question.find({category: questionCategoryId}).countDocuments();
         let questionList = await Question.find({category: questionCategoryId},{text: 1,type: 1, 'stemBody.stems': 1}).skip((page - 1) * ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE);
+        questionList = _.shuffle(questionList);
         if(questionList.length >0){                
             return res.status(200).render('exam/examSheet',{
                 path: '/exam/demo',

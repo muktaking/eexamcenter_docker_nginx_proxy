@@ -75,7 +75,8 @@ module.exports.examGet = async(req,res,next)=>{
         let hasPreviousAttempt = false;
         let totalQuestionList = await Question.find({category: questionCategoryId}).countDocuments();
         let questionList = await Question.find({category: questionCategoryId},{text: 1,type: 1, 'stemBody.stems': 1}).skip((page - 1) * ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE);
-
+        questionList = _.shuffle(questionList); // shuffing the result
+        
         if(questionList.length >0){
             if(!req.session.examIds){//has user already started exam??--> No; has any previous attempt for it??
                 let attemptData;
