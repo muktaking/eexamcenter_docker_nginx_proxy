@@ -6,6 +6,41 @@ block header
 
 block content
     .container
+        if questionTotalNum
+            .modal.fade#exampleModal(tabindex='-1' role='dialog' aria-labelledby="exampleModalLabel" aria-hidden="true")
+                .modal-dialog(role='document')
+                    .modal-content
+                        .modal-header
+                            h5.modal-title#exampleModalLabel Marking Rules
+                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                span(aria-hidden='true') &times;
+                        .modal-body                           
+                            table.table.table-sm.text-left
+                                thead
+                                    tr.text-center 
+                                        th(colspan="2") Each Question has 5 stem
+                                tbody
+                                    tr
+                                        td(scope="row")  Mark for each correct stem
+                                        td  0.20
+                                    tr
+                                        td Penalty for each incorrect stem
+                                        td -0.04
+                                    tr
+                                        td For each correct sba* 
+                                        td 1
+                                    tr
+                                        td For each incorrect sba*
+                                        td -0.20 (5 X 0.04)
+                                    
+                                    tr.table-danger 
+                                        td(colspan="2") *sba= Single Best Answer  ** if you touch a True/False Type question, any untouched stem will be consider as wrong. Otherwise no negative marking will be counted.
+
+                        .modal-footer
+                            button.btn.btn-primary(type='button')
+                                - parentCategory.slug = parentCategory.slug.substring(5).trim().replace(/\s/g, '%20') 
+                                a.btn.btn-primary(href='/exam/topic/'+ parentCategory.slug) Start Exam
+                            button.btn.btn-secondary(type='button' data-dismiss='modal') Close
         .row.mt-2
             .col-md-1
             .col-md-10
@@ -28,8 +63,7 @@ block content
                                 span.text-info= parentCategory.name
                         .col-12.my-2.text-center
                             .alert.alert-success Total Number Of question is #{questionTotalNum}
-                            - parentCategory.slug = parentCategory.slug.substring(5).trim().replace(/\s/g, '%20')
-                            a.btn.btn-primary(href='/exam/topic/'+ parentCategory.slug) Take Exam
+                            button.btn.btn-primary(data-toggle="modal" data-target="#exampleModal") Take Exam
                         if categoryList.length > 0    
                             .col-12.mt-3.text-center
                                 h3 More Available Category Present in

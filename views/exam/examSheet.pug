@@ -63,7 +63,7 @@ block content
                                 a.page-link(href='?questionCategory='+ questionCategoryId +'&page='+ lastPage) #{ITEMS_PER_PAGE*(lastPage-1)} - #{ITEMS_PER_PAGE*lastPage}
                                                                 
             .col-11.col-md-8
-                if breadcrumbs
+                //if breadcrumbs
                     nav(aria-label="breadcrumb")
                         ol.breadcrumb
                             each crumb,index in breadcrumbs
@@ -73,7 +73,7 @@ block content
                                     li.breadcrumb-item
                                         a(href=crumb.url)= crumb.name
                 .row
-                    .col.text-center
+                    //.col.text-center
                         button.btn.btn-info.my-2(type="button" data-toggle="collapse" data-target="#collapseExamRule" aria-expanded="false" aria-controls="collapseExamRule") Know About Exam Marking Rules
                         .collapse#collapseExamRule
                             .card.card-body
@@ -98,7 +98,7 @@ block content
                                         tr.table-info 
                                             td(colspan="2") *sba= Single Best Answer  ** if you touch a True/False Type question, any untouched stem will be consider as wrong. Otherwise no negative marking will be counted.
 
-                form(method='post' action="" id="exam-form")
+                form.mt-3(method='post' action="" id="exam-form")
                     .slick-question.mb-2
                         each val, index in questionList
                             div(data-question-id=val._id data-question-type=val.type)
