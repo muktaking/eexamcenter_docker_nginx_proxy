@@ -67,3 +67,27 @@ nav.navbar{
 .showAll{
     display: block;
 }
+/* jssoicals */
+#share-wrapper-vert {
+    position:fixed; 
+    top: 50%; 
+    z-index: 100000000;
+    width: 40px;  
+    margin-top: -150px;
+}
+#share-wrapper-hori{
+    display: none;;
+}
+@media (max-width: 575.98px) {
+    #share-wrapper-vert {
+        display: none;
+    }
+    #share-wrapper-hori{
+        display: inline;
+        position: fixed;
+        bottom: 0px;
+        z-index: 100000000;
+        left: 50%;
+        margin-left: -130px;
+    }
+} 

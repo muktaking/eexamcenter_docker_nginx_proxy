@@ -295,7 +295,13 @@ $('#resetBtn').click(e=>{
 
 // <------------- Universal -------------->
 //social js
-$("#share").jsSocials({
+//social js
+$("#share-vert").jsSocials({
+    showLabel: false,
+    showCount: false,
+    shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
+});
+$("#share-hori").jsSocials({
     showLabel: false,
     showCount: false,
     shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
