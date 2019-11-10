@@ -68,7 +68,7 @@ nav.navbar{
     display: block;
 }
 /* jssoicals */
-#share-wrapper-vert {
+/* #share-wrapper-vert {
     position:fixed; 
     top: 50%; 
     z-index: 100000000;
@@ -77,9 +77,14 @@ nav.navbar{
 }
 #share-wrapper-hori{
     display: none;;
+} */
+#share-popup{
+    position:fixed; 
+    top: 50%; 
+    z-index: 100000000;
 }
 @media (max-width: 575.98px) {
-    #share-wrapper-vert {
+    /* #share-wrapper-vert {
         display: none;
     }
     #share-wrapper-hori{
@@ -89,5 +94,9 @@ nav.navbar{
         z-index: 100000000;
         left: 50%;
         margin-left: -130px;
+    } */
+    #share-popup{
+        top: 95%;
+        left: 45%; 
     }
 } 

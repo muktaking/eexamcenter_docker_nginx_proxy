@@ -296,16 +296,38 @@ $('#resetBtn').click(e=>{
 // <------------- Universal -------------->
 //social js
 //social js
-$("#share-vert").jsSocials({
-    showLabel: false,
-    showCount: false,
-    shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
+// $("#share-vert").jsSocials({
+//     showLabel: false,
+//     showCount: false,
+//     shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
+// });
+// $("#share-hori").jsSocials({
+//     showLabel: false,
+//     showCount: false,
+//     shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
+// });
+//pop over with jssocials
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top',
+        html : true,
+        title : 'Share on Socials <a href="#" class="close" data-dismiss="alert">&times;</a>',
+        content : '<div class="media"><a href="#" class="pull-left"><div class="media-body"><h4 class="media-heading">Please, share us</h4><div id="share-wrapper"><div id="share"></div></div></div></div>'
+    });
+    $(document).on("click", ".popover .close" , function(){
+        $(this).parents(".popover").popover('hide');
+    });
+
 });
-$("#share-hori").jsSocials({
-    showLabel: false,
-    showCount: false,
-    shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
-});
+//started jssocials after popup added to the dom
+$('[data-toggle="popover"]').on('inserted.bs.popover', function () {
+    $("#share").jsSocials({
+        showLabel: false,
+        showCount: false,
+        shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
+    });
+    // do something…
+  })
 // Bs4 and jquery to show tooltip
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
