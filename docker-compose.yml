@@ -37,6 +37,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=$APP_MONGO_USER
       - MONGO_INITDB_ROOT_PASSWORD=$APP_MONGO_PASS
+    restart: always 
+  
   # mongodb-backup:
   #   container_name: mongodb-backup
   #   image: tiredofit/mongodb-backup
@@ -51,8 +53,7 @@ services:
   #     - DB_CLEANUP_TIME=8640
   #     - MD5=TRUE
   #     - COMPRESSION=XZ
-
-  #   restart: always    
+  #    restart: always    
 
 networks:
   default:
