@@ -2,7 +2,7 @@
 
 export CONTAINER_NAME="mongodb"
 export DATABASE_NAME="eexam"
-export BACKUP_LOCATION="/home/eexam//backups"
+export BACKUP_LOCATION="/home/eexam/backups"
 
 export TIMESTAMP=$(date +'%Y%m%d%H%M%S')
 
