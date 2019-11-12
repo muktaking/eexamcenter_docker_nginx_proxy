@@ -21,8 +21,8 @@ echo staring docker images
 sudo docker start mongodb
 sudo docker start node_app
 
-echo uploading to dropbox
-./dropbox_uploader.sh upload /root/backup/ /onlinepgdexam/
+#echo uploading to dropbox
+#./dropbox_uploader.sh upload /root/backup/ /onlinepgdexam/
 
 # to run this at cron job please add following liens in your crontab(crontab -e)
 # 0 3 * * * /root/backup.sh

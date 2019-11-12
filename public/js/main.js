@@ -328,6 +328,18 @@ $('[data-toggle="popover"]').on('inserted.bs.popover', function () {
     });
     // do something…
   })
+//cookieconsent
+window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#000"
+      },
+      "button": {
+        "background": "#f1d600"
+      }
+    },
+    "theme": "edgeless"
+  });  
 // Bs4 and jquery to show tooltip
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()

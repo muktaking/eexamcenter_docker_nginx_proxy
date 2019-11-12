@@ -38,6 +38,23 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=$APP_MONGO_USER
       - MONGO_INITDB_ROOT_PASSWORD=$APP_MONGO_PASS
 
+    mongo-db-backup:
+    container_name: mongo-db-backup
+    image: tiredofit/mongodb-backup
+    links:
+     - mongodb
+    volumes:
+      - ./backups:/backups
+    environment:
+      - DB_HOST=mongodb
+      - DB_DUMP_FREQ=1440
+      - DB_DUMP_BEGIN=0000
+      - DB_CLEANUP_TIME=8640
+      - MD5=TRUE
+      - COMPRESSION=XZ
+
+    restart: always    
+
 networks:
   default:
     external:
