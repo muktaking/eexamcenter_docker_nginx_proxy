@@ -215,8 +215,8 @@ module.exports.examPost = async(req,res,next)=>{
         questionIds = _.map(questionList,'id');
         function resultData(type='',text='',stems=[],answers=[],feedbacks=[],generalFeedbacks=[]){
             this.type = type;
-            this.text=text;
-            this.stems=stems;
+            this.text = text;
+            this.stems = stems;
             this.answers = answers;
             this.feedbacks = feedbacks;
             this.generalFeedbacks = generalFeedbacks;

@@ -192,7 +192,7 @@ function showResult(data){
                     $(`<div class="mb-2">
                     <ul class="list-group" id="list-group-${i}">
                         <li class="list-group-item active text-center">
-                            Answer and Explanation For Question no. <span class="badge badge-light">${i+1}</span>. Mark Obtained: <span class="badge ${Number(e.score ) > .50 ? "badge-success" : "badge-danger"}">${e.score}</span>
+                            Answer and Explanation For Question no. <span class="badge badge-light">${i+1}</span>. <p>Ques</p> Mark Obtained: <span class="badge ${Number(e.score ) > .50 ? "badge-success" : "badge-danger"}">${e.score}</span>
                         </li>
                     </ul>
                     </div>`).appendTo('#content-Wrapper');
