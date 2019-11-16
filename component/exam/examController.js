@@ -226,7 +226,7 @@ module.exports.examPost = async(req,res,next)=>{
         const questionListToCheck = await Question.find({_id: {$in: questionIds}});
         if(questionListToCheck.length > 0){
             questionListToCheck.forEach((element,index)=>{
-                let result = new resultData(element.type,element.text,element.stemBody.stems,element.stemBody.feedbacks,element.generalFeedbacks);
+                let result = new resultData(element.type,element.text,element.stemBody.stems,[],element.stemBody.feedbacks,element.generalFeedbacks);
                 if(element.type === 'sba'){
                     SbaManipulator.getResult(element, index, result, resultDataArray, questionList);
                 } else if(element.type === 'matrix'){
