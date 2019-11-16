@@ -2,7 +2,6 @@
 
 //Executing the function that need to be run on load 
 $(window).on("load", function(){
-    alert('hello');
     $("#pre-loader").fadeOut(50,()=>{
         $('#pre-loader').remove();
         $('body')[0].style.overflow= "visible";
