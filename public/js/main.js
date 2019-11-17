@@ -176,7 +176,7 @@ function showResult(data){
                     e.answers.forEach((element, index)=>{
                         $(`<li class="list-group-item ${element[0] ? 'list-group-item-success ': 'list-group-item-danger'} py-1">
                             <p class="my-0">
-                                Your Answer For Stem <p>"${e.stems[index]}"</p> is ${element[0] ? 'Right' : 'Wrong'}.<br /> Right Answer is  <span class="badge badge-success">${element[1] === '1' ? 'True' : 'False'}</span>
+                                Your Answer For "${e.stems[index]}" <br /> is ${element[0] ? 'Right' : 'Wrong'}.<br /> Right Answer is  <span class="badge badge-success">${element[1] === '1' ? 'True' : 'False'}</span>
                             </p>
                             <p class="my-0">
                                 Explanation: ${e.feedbacks[index].length > 0 ? e.feedbacks[index] : 'No explanation'}
@@ -206,7 +206,7 @@ function showResult(data){
 
                     $(`<li class="list-group-item ${e.answers[0] ? 'list-group-item-success ': 'list-group-item-danger'} py-1">
                         <p class="my-0">
-                            Your Answer For this question is ${e.answers[0] ? 'Right' : 'Wrong'}. Right Answer is:   <span class="badge badge-success">${e.answers[1]}</span>
+                            Your Answer For this question is ${e.answers[0] ? 'Right' : 'Wrong'}. <br />Right Answer is:   <span class="badge badge-success">${e.answers[1]}</span>
                         </p>
                     </li>`).appendTo('#list-group-' + i);
 
