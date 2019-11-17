@@ -173,10 +173,17 @@ function showResult(data){
                         </li>
                     </ul>
                     </div>`).appendTo('#content-Wrapper');
+                    e.stems.forEach((element,index)=>{
+                        $(`<li class="list-group-item py-1">
+                        <p class="my-0">
+                            Stem_${index+1}: ${e.stems[index]}
+                        </p>
+                    </li>`).appendTo('#list-group-' + i);
+                    });
                     e.answers.forEach((element, index)=>{
                         $(`<li class="list-group-item ${element[0] ? 'list-group-item-success ': 'list-group-item-danger'} py-1">
                             <p class="my-0">
-                                Your Answer For "${e.stems[index]}" <br /> is ${element[0] ? 'Right' : 'Wrong'}.<br /> Right Answer is  <span class="badge badge-success">${element[1] === '1' ? 'True' : 'False'}</span>
+                                Your Answer For stem_${index+1}. is ${element[0] ? 'Right' : 'Wrong'}.<br /> Right Answer is  <span class="badge badge-success">${element[1] === '1' ? 'True' : 'False'}</span>
                             </p>
                             <p class="my-0">
                                 Explanation: ${e.feedbacks[index].length > 0 ? e.feedbacks[index] : 'No explanation'}
