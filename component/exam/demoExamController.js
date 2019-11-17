@@ -117,8 +117,10 @@ module.exports.examPost = async(req,res,next)=>{
             
         });
         questionIds = _.map(questionList,'id');
-        function resultData(type='',answers=[],feedbacks=[],generalFeedbacks=[]){
+        function resultData(type='',text='',stems=[],answers=[],feedbacks=[],generalFeedbacks=[]){
             this.type = type;
+            this.text = text;
+            this.stems = stems;
             this.answers = answers;
             this.feedbacks = feedbacks;
             this.generalFeedbacks = generalFeedbacks;
@@ -128,7 +130,7 @@ module.exports.examPost = async(req,res,next)=>{
         const questionListToCheck = await Question.find({_id: {$in: questionIds}});
         if(questionListToCheck.length > 0){
             questionListToCheck.forEach((element,index)=>{
-                let result = new resultData(element.type,[],element.stemBody.feedbacks,element.stemBody.generalFeedbacks);
+                let result = new resultData(element.type,element.text,element.stemBody.stems,[],element.stemBody.feedbacks,element.stemBody.generalFeedbacks);
                 if(element.type === 'sba'){
                     SbaManipulator.getResult(element, index, result, resultDataArray, questionList);
                 } else if(element.type === 'matrix'){
